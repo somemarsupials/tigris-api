@@ -1,3 +1,5 @@
-const api = require('./api');
+const http = require('http');
+const app = require('./app');
+const env = require('./env');
 
-api.listen(5000, 'Tigris API\n');
+http.createServer(app).listen(env.server.port, env.server.host);
