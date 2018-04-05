@@ -1,0 +1,7 @@
+server:
+  port: null
+  host: null
+providers:
+  spotify:
+    clientId: null
+    secret: null
