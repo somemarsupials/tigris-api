@@ -5,7 +5,7 @@
   "repository": "-",
   "main": "server.js",
   "scripts": {
-    "test": "mocha tests/**/*.js",
+    "test": "node_modules/.bin/ava tests --watch",
     "dev": "node_modules/.bin/nodemon server.js"
   },
   "author": "TBW",
@@ -20,6 +20,9 @@
     "pg": "^7.4.1"
   },
   "devDependencies": {
-    "nodemon": "^1.17.3"
+    "ava": "^0.25.0",
+    "gulp": "^3.9.1",
+    "nodemon": "^1.17.3",
+    "sinon": "^4.5.0"
   }
 }
