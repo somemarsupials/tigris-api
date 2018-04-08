@@ -1,7 +1,12 @@
 server:
   port: null
   host: null
+client:
+  url: null
 providers:
   spotify:
     clientId: null
     secret: null
+    authoriseURI: null
+    tokenURI: null
+    redirectURI: null
