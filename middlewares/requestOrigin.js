@@ -1,5 +1,5 @@
-module.exports = function (req, res, next) {
-  req.origin = `${req.protocol}://${req.headers.host}`;
+module.exports = function (req, res, next, env = require('../env')) {
+  req.origin = env.client.url;
   next();
 };
 
