@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SpotifyOAuthClient #authorise redirects correctly 1`] = `
+Array [
+  Array [
+    "auth.com?response_type=code&scopes=user-read-private%20user-read-email&client_id=0&redirect_uri=&state=1",
+  ],
+]
+`;
+
+exports[`SpotifyOAuthClient #token when making API request makes correct API request 1`] = `
+Array [
+  Array [
+    Object {
+      "data": Object {
+        "code": "code",
+        "grant_type": "authorization_code",
+        "redirect_uri": undefined,
+      },
+      "headers": Object {
+        "Authorization": "credentials",
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      "method": "post",
+      "url": undefined,
+    },
+  ],
+]
+`;
