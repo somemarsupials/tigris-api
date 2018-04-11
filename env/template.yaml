@@ -3,6 +3,8 @@ server:
   host: null
 client:
   url: null
+redis:
+  url: null
 providers:
   spotify:
     clientId: null
