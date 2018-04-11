@@ -6,7 +6,7 @@ module.exports = function (req, res, next) {
     scopes: 'user-read-private user-read-email',
     client_id: req.provider.clientId,
     redirect_uri: req.provider.redirectURI,
-    state: 'tigris',
+    state: req.session.id,
   });
 
   res.redirect(`${req.provider.authoriseURI}?${params}`);

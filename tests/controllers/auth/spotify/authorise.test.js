@@ -9,7 +9,10 @@ describe('auth/spotify/authorise', () => {
       provider: {
         clientId: 0,
         authoriseURI: 'auth.com'
-      }
+      },
+      session: {
+        id: 1
+      },
     };
     res = { redirect: jest.fn() };
     route(req, res, null);
