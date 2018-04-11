@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`/auth/spotify/callback when making API request makes correct API request 1`] = `
+exports[`/auth/spotify/token when making API request makes correct API request 1`] = `
 Array [
   Array [
     Object {

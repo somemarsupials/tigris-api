@@ -12,5 +12,6 @@ router.use(bearerBase64);
 
 router.get('/authorise', require('./authorise'));
 router.get('/callback', require('./callback'));
+router.get('/token', require('./token'));
 
 module.exports = router;
