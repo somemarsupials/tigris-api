@@ -6,8 +6,8 @@ describe('OAuthClient', () => {
 
   beforeEach(() => {
     env = { 
-      provider: {
-        id: 0,
+      providers: {
+        provider: { id: 0 },
       },
     };
     client = new OAuthClient(env, 'provider', { a: 1 });
@@ -16,13 +16,13 @@ describe('OAuthClient', () => {
   describe('#provider', () => {
     describe('when provider exists', () => {
       it('returns provider', () => {
-        expect(client.provider).toEqual(env.provider);
+        expect(client.provider).toEqual({ id: 0 });
       });
     });
 
     describe('when provider does not exist', () => {
       beforeEach(() => {
-        client._env.provider = null;
+        client._env.providers.provider = null;
       });
 
       it('returns empty object', () => {
