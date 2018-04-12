@@ -1,5 +1,9 @@
 const express = require('express');
+const routerGenerator = require('../../lib/oauth/router');
+
 const router = express.Router();
+const generator = routerGenerator();
+
 
 // middlewares
 
@@ -13,7 +17,8 @@ const routes = [
 ];
 
 routes.forEach(route => {
-  router.use(`/${route}`, require(`./${route}`));
+  let subRouter = generator.generate(express.Router(), route);
+  router.use(`/${route}`, subRouter);
 });
 
 module.exports = router;
