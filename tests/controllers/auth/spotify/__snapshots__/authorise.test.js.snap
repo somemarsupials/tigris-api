@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`auth/spotify/authorise redirects correctly 1`] = `
-Array [
-  Array [
-    "auth.com?response_type=code&scopes=user-read-private%20user-read-email&client_id=0&redirect_uri=&state=1",
-  ],
-]
-`;
