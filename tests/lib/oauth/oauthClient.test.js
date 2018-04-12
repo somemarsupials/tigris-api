@@ -59,7 +59,7 @@ describe('OAuthClient', () => {
         },
         origin: 'site.com',
         session: {},
-      }
+      };
       res = { redirect: jest.fn() };
       client.callback(req, res);
     });

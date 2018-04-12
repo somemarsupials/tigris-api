@@ -8,7 +8,7 @@ describe('provider middleware', () => {
       providers: {
         hello: 'world'
       }
-    }
+    };
     req = {};
     next = jest.fn();
     provider('hello')(req, null, next, env);

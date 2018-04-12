@@ -2,7 +2,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const express = require('express');
 const env = require('./env');
-const http = require('http');
 const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
 

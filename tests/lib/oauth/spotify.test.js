@@ -1,8 +1,7 @@
 const spotify = require('../../../lib/oauth/clients').spotify;
-const errors = require('../../../lib/errors');
 
 describe('SpotifyOAuthClient', () => {
-  let client, env;
+  let client, env, req, res;
 
   beforeEach(() => {
     env = {
@@ -16,12 +15,10 @@ describe('SpotifyOAuthClient', () => {
         },
       },
     };
-    client = spotify(env)
+    client = spotify(env);
   });
 
   describe('#authorise', () => {
-    let req, res;
-
     beforeEach(() => {
       req = {
         origin: 'site.com',
@@ -118,8 +115,6 @@ describe('SpotifyOAuthClient', () => {
     });
 
     describe('when non-http error', () => {
-      let error;
-
       beforeEach( () => {
         req.httpClient = jest.fn().mockImplementation(() => { 
           throw new Error('other error');
@@ -152,17 +147,11 @@ describe('SpotifyOAuthClient', () => {
   });
 
   describe('#_bearer', () => {
-    let bufferClass, buffer, req, returnValue;
+    let bufferClass, buffer, returnValue;
 
     beforeEach(() => {
       buffer = { toString: jest.fn().mockReturnValue('base64creds') };
       bufferClass = jest.fn().mockReturnValue(buffer);
-      req = {
-        provider: {
-          clientId: 'id',
-          secret: 'secret',
-        },
-      };
       returnValue = client._bearer(bufferClass);
     });
 

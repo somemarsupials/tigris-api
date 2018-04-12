@@ -8,4 +8,4 @@ try {
 }
 catch (error) {
   throw new Error(`cannot locate config at: ${source})`);
-};
+}

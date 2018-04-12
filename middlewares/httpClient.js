@@ -3,14 +3,14 @@ const qs = require('querystring');
 
 function isForm(req) {
   return req.headers['Content-Type'] === 'application/x-www-form-urlencoded';
-};
+}
 
 function formatForm(req, formatter = qs.stringify) {
   if (req.method === 'post' && isForm(req)) {
     req.data = formatter(req.data);
-  };
+  }
   return req;
-};
+}
 
 axios.interceptors.request.use(formatForm);
 

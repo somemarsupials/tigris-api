@@ -11,11 +11,11 @@ function nullify(object) {
     }
     else {
       nullified[key] = null;
-    };
+    }
   });
 
   return nullified;
-};
+}
 
 gulp.task('template-env', function () {
   let template = yaml.dump(nullify(require('./env')));
