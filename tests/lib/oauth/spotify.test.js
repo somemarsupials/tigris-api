@@ -1,4 +1,4 @@
-const buildSpotifyOAuthClient = require('../../../lib/oauth/spotify');
+const spotify = require('../../../lib/oauth/clients').spotify;
 const errors = require('../../../lib/errors');
 
 describe('SpotifyOAuthClient', () => {
@@ -6,15 +6,17 @@ describe('SpotifyOAuthClient', () => {
 
   beforeEach(() => {
     env = {
-      spotify: {
-        clientId: 0,
-        authoriseURI: 'auth.com',
-        callbackURI: 'callback.com',
-        redirect_uri: 'uri',
-        secret: 'secret',
+      providers: {
+        spotify: {
+          clientId: 0,
+          authoriseURI: 'auth.com',
+          callbackURI: 'callback.com',
+          redirect_uri: 'uri',
+          secret: 'secret',
+        },
       },
     };
-    client = buildSpotifyOAuthClient(env)
+    client = spotify(env)
   });
 
   describe('#authorise', () => {
